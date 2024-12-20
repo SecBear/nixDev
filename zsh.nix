@@ -46,7 +46,7 @@
         fi
         echo "#!/usr/bin/env nix-shell
 #! nix-shell -i bash --pure
-#! nix-shell -p bash <packages> # Seperate packages by space
+#! nix-shell -p bash <packages>
 #! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/<commit_hash>.tar.gz
 
 # Script here
