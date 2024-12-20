@@ -1,0 +1,12 @@
+alias nxs = 'f() { 
+        if [ -z "$1" ]; then
+          echo "Usage: nxs <filename>.sh"
+          return 1
+        fi
+        echo "#!/usr/bin/env nix-shell
+#! nix-shell -i bash --pure
+#! nix-shell -p bash <packages> # Seperate packages by space
+#! nix-shell -I nixpkgs=https://github.com/NixOS/nixpkgs/archive/<commit_hash>.tar.gz
+
+# Script here
+" > $1 && chmod +x $1 && vim $1; }; f'
